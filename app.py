@@ -16,7 +16,11 @@ def displey(image: Image.Image):
 
 
 demo = gr.Interface(
-    fn=displey, inputs=gr.Image(type="pil"), outputs=[gr.Text(), gr.Image()]
+    fn=displey,
+    inputs=gr.Image(type="pil"),
+    outputs=[gr.Text(label="Class of Image"), gr.Image(label="I")],
+    title="Flower Classification",
+    description="The model can classify 5 classes (Daisy, Rose, Tulip, Dandelion, Sunflower)",
 )
 
 if __name__ == "__main__":
