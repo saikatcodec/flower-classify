@@ -35,6 +35,7 @@ Try it on Hugging Face Spaces: https://huggingface.co/spaces/offline29940/classi
 - A ResNet-50 backbone is loaded and its final layer is replaced to match the number of flower classes in the checkpoint ([`predictor.classifier.ResNet50Classifier`](predictor/classifier.py)).
 - During inference, images are preprocessed with torchvision transforms (resize, center-crop, normalize), then passed through the model to get softmax probabilities and top-5 predictions ([`predictor.infer.Prediction`](predictor/infer.py)).
 - The top-1 label and confidence are drawn onto the input image and saved as `predicted_image.jpg`.
+- The model is trained on Google Colab
 
 Note: [`predictor.infer.Prediction.inference`](predictor/infer.py) returns a tuple `(label, output_image_path)`.
 
