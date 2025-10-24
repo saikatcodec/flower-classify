@@ -87,13 +87,19 @@ class Prediction:
 
         # Create background for the lable
         text_size, _baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 2)
-        cv2.rectangle(image, (0, 0), (text_size[0] + 10, text_size[1] + 10), color, -1)
+        cv2.rectangle(
+            image,
+            (image.shape[0] // 2 - 15, 0),
+            (image.shape[0] // 2 - 15 + text_size[0] + 10, text_size[1] + 10),
+            color,
+            -1,
+        )
 
         # Puts label text on the image
         cv2.putText(
             image,
             label,
-            (5, text_size[1] + 5),
+            (image.shape[0] // 2 - 10, text_size[1] + 5),
             cv2.FONT_HERSHEY_SIMPLEX,
             0.7,
             (255, 255, 255),
