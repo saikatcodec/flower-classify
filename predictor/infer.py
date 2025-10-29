@@ -11,8 +11,7 @@ from predictor.classifier import ResNet50Classifier
 
 class Prediction:
     def __init__(self, model_path):
-        # self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # Extract classes and model from the save model
         self.classes, self.model = self._get_model(model_path)
